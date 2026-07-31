@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2f6fed">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" type="image/png" href="../icons/icon-192.png">
+  <link rel="apple-touch-icon" href="../icons/icon-192.png">
+  <title>Study Log - 学科</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/subject.css">
+</head>
+<body data-page="subject">
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../index.html">Study Log</a>
+      <nav class="main-nav">
+        <a href="../index.html">首页</a>
+        <a class="active" href="subject.html">学科</a>
+        <a href="log.html">学习日志</a>
+        <a href="plan.html">学习计划</a>
+        <a href="statistics.html">数据统计</a>
+        <a href="calendar.html">学习日历</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="container">
+      <h1 class="page-title">学科</h1>
+      <p class="page-subtitle">记录每日作业与学习成果</p>
+
+      <nav class="subject-tabs" id="subject-tabs"></nav>
+
+      <section class="card" id="subject-drop-zone">
+        <h2 id="today-title">今日记录</h2>
+        <p class="muted" id="today-date"></p>
+        <div class="form-field">
+          <label for="homework-input">今日作业</label>
+          <textarea class="textarea" id="homework-input" placeholder="例如：P36 第1~12题"></textarea>
+        </div>
+        <div class="upload-row">
+          <button class="btn" id="pick-images" type="button">相册 / 文件</button>
+          <button class="btn secondary" id="pick-camera" type="button">拍照</button>
+          <span class="muted">支持 JPG / PNG，可多选、拖拽或粘贴</span>
+          <input class="visually-hidden" id="image-file" type="file" accept="image/jpeg,image/png" multiple>
+          <input class="visually-hidden" id="camera-file" type="file" accept="image/*" capture="environment">
+        </div>
+        <div class="preview-grid" id="image-previews"></div>
+        <div class="save-row">
+          <button class="btn" id="save-record" type="button">保存记录</button>
+          <span class="muted" id="save-status"></span>
+        </div>
+        <div class="message" id="subject-message" role="status"></div>
+      </section>
+
+      <section class="card">
+        <h2>历史记录</h2>
+        <div id="history-list"></div>
+      </section>
+    </div>
+  </main>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <div class="lightbox-backdrop"></div>
+    <img id="lightbox-image" alt="图片大图">
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">Study Log · <span id="footer-year"></span></div>
+  </footer>
+
+  <script src="../js/utils.js"></script>
+  <script src="../js/subjects.js"></script>
+  <script src="../js/storage.js"></script>
+  <script src="../js/upload.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

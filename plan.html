@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2f6fed">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" type="image/png" href="../icons/icon-192.png">
+  <link rel="apple-touch-icon" href="../icons/icon-192.png">
+  <title>Study Log - 学习计划</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/plan.css">
+</head>
+<body data-page="plan">
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../index.html">Study Log</a>
+      <nav class="main-nav">
+        <a href="../index.html">首页</a>
+        <a href="subject.html">学科</a>
+        <a href="log.html">学习日志</a>
+        <a class="active" href="plan.html">学习计划</a>
+        <a href="statistics.html">数据统计</a>
+        <a href="calendar.html">学习日历</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="container">
+      <h1 class="page-title">学习计划</h1>
+      <p class="page-subtitle">上传并查看课程表、学习计划</p>
+
+      <section class="card" id="plan-drop-zone">
+        <h2>当前学习计划</h2>
+        <div id="plan-current"></div>
+      </section>
+
+      <section class="card">
+        <h2>上传学习计划</h2>
+        <div class="form-field">
+          <label for="plan-name-input">计划名称</label>
+          <input class="input" id="plan-name-input" type="text" placeholder="例如：暑假15天计划">
+        </div>
+        <div class="upload-row">
+          <button class="btn" id="pick-plan-file" type="button">选择 PDF / 图片</button>
+          <span class="muted">支持 PDF、JPG、PNG，PDF 建议小于 4MB，也可拖拽文件到此处</span>
+          <input class="visually-hidden" id="plan-file" type="file" accept="application/pdf,image/jpeg,image/png">
+        </div>
+        <div class="plan-preview" id="plan-preview"></div>
+        <div class="save-row">
+          <button class="btn" id="save-plan" type="button">保存计划</button>
+          <span class="muted" id="plan-status"></span>
+        </div>
+        <div class="message" id="plan-message" role="status"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">Study Log · <span id="footer-year"></span></div>
+  </footer>
+
+  <script src="../js/utils.js"></script>
+  <script src="../js/subjects.js"></script>
+  <script src="../js/storage.js"></script>
+  <script src="../js/plan.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>
