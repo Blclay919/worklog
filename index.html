@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2f6fed">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <title>Study Log - 首页</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body data-page="dashboard">
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">Study Log</a>
+      <nav class="main-nav">
+        <a class="active" href="index.html">首页</a>
+        <a href="pages/subject.html">学科</a>
+        <a href="pages/log.html">学习日志</a>
+        <a href="pages/plan.html">学习计划</a>
+        <a href="pages/statistics.html">数据统计</a>
+        <a href="pages/calendar.html">学习日历</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="container">
+      <h1 class="page-title">首页</h1>
+      <p class="page-subtitle" id="today-line"></p>
+
+      <div class="dashboard-grid">
+        <section class="card">
+          <h2>当前学习计划</h2>
+          <div id="plan-summary"></div>
+          <a class="btn secondary" href="pages/plan.html">查看计划</a>
+        </section>
+        <section class="card">
+          <h2>今日上传统计</h2>
+          <div class="progress-label">
+            <span id="upload-count">0 / 6</span>
+            <span id="upload-percent">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+        </section>
+      </div>
+
+      <section class="card">
+        <h2>今日学科状态</h2>
+        <div class="subject-grid" id="subject-status"></div>
+      </section>
+
+      <section class="card">
+        <h2>今日学习记录</h2>
+        <div id="today-records"></div>
+      </section>
+
+      <section class="card">
+        <h2>学习数据</h2>
+        <p class="muted">将全部学习数据导出为 JSON 文件备份，也可以从备份中恢复。</p>
+        <div class="data-actions">
+          <button class="btn" id="export-data" type="button">导出 JSON</button>
+          <button class="btn secondary" id="import-data" type="button">导入 JSON</button>
+          <input class="visually-hidden" id="import-file" type="file" accept=".json,application/json">
+        </div>
+        <label class="import-option">
+          <input id="import-overwrite" type="checkbox"> 覆盖现有数据（默认合并）
+        </label>
+        <p class="muted" id="data-usage"></p>
+        <div class="message" id="data-message" role="status"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">Study Log · <span id="footer-year"></span></div>
+  </footer>
+
+  <script src="js/utils.js"></script>
+  <script src="js/subjects.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
