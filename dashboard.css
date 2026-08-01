@@ -1,0 +1,128 @@
+/* 首页 Dashboard 样式 */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.dashboard-grid .card {
+  margin: 0;
+}
+
+.subject-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+.subject-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.subject-item:hover {
+  border-color: var(--color-primary);
+}
+
+.subject-item .subject-name {
+  font-weight: 600;
+}
+
+.subject-item .subject-status {
+  margin-left: auto;
+  font-size: var(--font-xs);
+  color: var(--color-text-muted);
+}
+
+.subject-item.uploaded {
+  border-color: #bbf7d0;
+  background: #f0fdf4;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-sm);
+  margin-bottom: var(--space-2);
+}
+
+.progress-bar {
+  height: 10px;
+  border-radius: var(--radius-full);
+  background: #e5e7eb;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0;
+  background: var(--color-primary);
+  border-radius: var(--radius-full);
+  transition: width 0.3s ease;
+}
+
+.plan-name {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.data-actions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.import-option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  font-size: var(--font-sm);
+  color: var(--color-text-muted);
+}
+
+.record-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.record-row:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.record-main {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.record-meta {
+  color: var(--color-text-muted);
+  font-size: var(--font-sm);
+}
+
+@media (max-width: 720px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .subject-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .subject-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,66 @@
+/* 学习计划页面样式 */
+.upload-row,
+.save-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.save-row {
+  margin-top: 14px;
+}
+
+.plan-preview {
+  margin-top: 14px;
+}
+
+.plan-image-preview {
+  display: block;
+  max-width: 100%;
+  max-height: 380px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.plan-pdf-preview {
+  display: block;
+  width: 100%;
+  height: 420px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.plan-current-name {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.plan-current-meta {
+  color: var(--color-text-muted);
+  font-size: var(--font-sm);
+  margin: var(--space-1) 0 var(--space-3);
+}
+
+.plan-current-actions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-top: var(--space-3);
+}
+
+.plan-current-preview {
+  margin-top: 12px;
+}
+
+.plan-empty {
+  margin-bottom: 12px;
+}
+
+@media (max-width: 480px) {
+  .plan-pdf-preview {
+    height: 320px;
+  }
+}
